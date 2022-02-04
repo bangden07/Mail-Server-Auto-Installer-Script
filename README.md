@@ -23,3 +23,6 @@ This script is based on factual research in the field. Many people do not unders
 `./mailserverinstaller.sh`
 
 5. Done
+
+## License
+This project is open source and available under the [MIT License](https://github.com/bangden07/Mail-Server-Auto-Installer-Script/blob/main/LICENSE).
