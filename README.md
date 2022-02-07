@@ -1,4 +1,4 @@
-# Mail Server Auto Installer Script
+# Mail Server Auto Installer Script Ubuntu
 This is an auto install mail server starter script.
 
 This script is based on factual research in the field. Many people do not understand how to install an email server independently. This script uses the engine from Mailcow and is setup in my own way.
