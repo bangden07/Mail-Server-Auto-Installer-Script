@@ -17,7 +17,7 @@ printf "\033[1;31m|__|_|__||___._||__|__|    |_______||_____|__|  \___/|_____|__
 printf "\033[0;37m _______               __          __ __                         \e[0m\n"
 printf "\033[0;37m|_     _|.-----.-----.|  |_.---.-.|  |  |.-----.----.            \e[0m\n"
 printf "\033[0;37m _|   |_ |     |__ --||   _|  _  ||  |  ||  -__|   _|            \e[0m\n"
-printf "\033[0;37m|_______||__|__|_____||____|___._||__|__||_____|__|         v1.2 \e[0m\n"
+printf "\033[0;37m|_______||__|__|_____||____|___._||__|__||_____|__|         v1.3 \e[0m\n"
 echo "Auto installer mail server basic from Mailcow modified by BangDen07."
 echo ""
 printf "\033[1;33mPERHATIAN${NC} ${MERAH}!!!\e[0m\n"
@@ -28,8 +28,8 @@ echo "Detail Image OS Anda:"
 echo "Saat ini anda menggunakan :" $UBUNTU_DETAIL
 echo ""
 
-if [[ "${UBUNTU_VERSION}" != "16.04" && "${UBUNTU_VERSION}" != "18.04" ]]; then
-        echo "Hanya berjalan di OS Ubuntu 16.04 atau 18.04" > /dev/stderr
+if [[ "${UBUNTU_VERSION}" != "18.04" && "${UBUNTU_VERSION}" != "20.04" ]]; then
+        echo "Hanya berjalan di OS Ubuntu 18.04 atau 20.04" > /dev/stderr
         exit 1
 fi
 
@@ -145,12 +145,10 @@ read -p "Hosts yang akan digunakan : " HOSTS
 sleep 0.5
 read -p "Hostname yang akan digunakan : " HOSTNAME
 sleep 0.5
-sudo hostnamectl set-hostname $HOSTS
+sudo hostnamectl set-hostname $HOSTSNAME
 sleep 0.5
 echo 127.0.0.1 $HOSTS $HOSTNAME localhost localhost.localdomain >> /etc/hosts
-sudo mv /etc/hostname /etc/hostname.bak && sudo touch /etc/hostname
 sleep 0.5
-echo $HOSTNAME > /etc/hostname
 echo ""
 echo "Hostname berhasil diganti dan digunakan saat ini : " $HASIL_HOSTNAME
 sleep 3
