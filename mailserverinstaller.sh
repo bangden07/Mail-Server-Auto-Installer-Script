@@ -63,8 +63,8 @@ else
   exit 1
 fi
 
-sudo sudo apt update -y &> /dev/null
-sudo apt upgrade -y &> /dev/null
+sudo sudo apt-get update -y &> /dev/null
+sudo apt-get upgrade -y &> /dev/null
 clear
 
 echo ""
@@ -88,7 +88,7 @@ done
 echo ""
 printf "\033[1;31mJangan keluar dari terminal! Proses instalasi sedang berlangsung...\e[0m\n"
 sleep 0.5
-sudo apt update -y &> /dev/null
+sudo apt-get update -y &> /dev/null
 sleep 0.5
 sudo apt-get install apt-transport-https ca-certificates curl software-properties-common -y &> /dev/null
 sleep 0.5
@@ -98,7 +98,7 @@ echo \
   "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sleep 0.5
-sudo apt update -y &> /dev/null
+sudo apt-get update -y &> /dev/null
 sleep 0.5
 sudo apt-get install docker-ce docker-ce-cli containerd.io -y &> /dev/null
 sleep 0.5
