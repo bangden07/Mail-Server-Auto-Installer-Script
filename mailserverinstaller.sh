@@ -144,9 +144,9 @@ echo ""
 read -p "Hosts yang akan digunakan : " HOSTS
 sleep 0.5
 read -p "Hostname yang akan digunakan : " HOSTNAME
-sleep 0.5
+sleep 1
 sudo hostnamectl set-hostname $HOSTSNAME
-sleep 0.5
+sleep 2
 echo 127.0.0.1 $HOSTS $HOSTNAME localhost localhost.localdomain >> /etc/hosts
 sleep 0.5
 echo ""
@@ -228,6 +228,8 @@ printf "\033[1;33m++                 Instalasi Selesai                   ++\e[0m
 printf "\033[1;33m+++++++++++++++++++++++++++++++++++++++++++++++++++++++++\e[0m\n"
 echo ""
 echo "🎉🎉 Hore instalasi Anda sudah selesai"
+echo ""
+echo "⚠️ Tunggu ± 5 menit untuk install SSL."
 echo ""
 echo "Login : https://"$HOSTS
 echo "User  : admin"
