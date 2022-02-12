@@ -87,7 +87,7 @@ done
 echo ""
 printf "\033[1;31mJangan keluar dari terminal! Proses instalasi sedang berlangsung...\e[0m\n"
 sleep 0.5
-sudo apt-get update -y &> /dev/null
+sudo apt-get update &> /dev/null
 sleep 0.5
 sudo apt-get install apt-transport-https ca-certificates curl software-properties-common -y &> /dev/null
 sleep 0.5
@@ -144,8 +144,6 @@ read -p "Hosts yang akan digunakan : " HOSTS
 sleep 0.5
 read -p "Hostname yang akan digunakan : " HOSTNAME
 sleep 1
-sudo hostnamectl set-hostname $HOSTSNAME
-sleep 1
 echo $HOSTNAME > /etc/hostname
 sleep 1
 echo 127.0.0.1 $HOSTS $HOSTNAME localhost localhost.localdomain >> /etc/hosts
@@ -161,8 +159,9 @@ echo "| Time Zone default : $WAKTU                                  "
 echo "+-------------------------------------------------------------+"
 echo "Untuk waktu Negara Indonesia : Asia/Jakarta"
 echo ""
-read -p "Masukan zona waktu negara Anda : " zona_waktu
 echo "Pastikan penulisan zona waktu dengan benar!"
+read -p "Masukan zona waktu negara Anda : " zona_waktu
+sleep 0.5
 sudo timedatectl set-timezone $zona_waktu
 echo "+-------------------------------------------------------------+"
 echo "| Time Zone saat ini : $zona_waktu                            "
@@ -193,7 +192,7 @@ printf "\033[1;31mJangan keluar dari terminal! Proses instalasi sedang berlangsu
 echo ""
 echo ""
 printf "\033[1;33m Input dengan hostname (FQDN): $HOSTS \e[0m\n"
-printf "\033[1;33m Tekan ENTER\e[0m\n"
+printf "\033[1;33m Timezone tekan ENTER\e[0m\n"
 printf "\033[1;33m ClamAV pilih : Y\e[0m\n"
 echo ""
 cd /opt
