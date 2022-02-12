@@ -63,8 +63,7 @@ else
   exit 1
 fi
 
-sudo sudo apt-get update -y &> /dev/null
-sudo apt-get upgrade -y &> /dev/null
+sudo sudo apt-get update && sudo apt-get upgrade -y
 clear
 
 echo ""
@@ -98,7 +97,7 @@ echo \
   "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sleep 0.5
-sudo apt-get update -y &> /dev/null
+sudo apt-get update &> /dev/null
 sleep 0.5
 sudo apt-get install docker-ce docker-ce-cli containerd.io -y &> /dev/null
 sleep 0.5
@@ -239,6 +238,6 @@ echo "Login : https://"$HOSTS
 echo "User  : admin"
 echo "Pass  : moohoo"
 echo ""
-printf "\033[1;31mSilahkan restart VPS Anda\e[0m\n"
+printf "\033[1;31m⚠️ Silahkan restart VPS Anda sebelum menuju link/url di atas!!!\e[0m\n"
 echo ""
 echo "copyright © 2022 Bang Den"
