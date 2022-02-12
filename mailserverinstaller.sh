@@ -17,7 +17,7 @@ printf "\033[1;31m|__|_|__||___._||__|__|    |_______||_____|__|  \___/|_____|__
 printf "\033[0;37m _______               __          __ __                         \e[0m\n"
 printf "\033[0;37m|_     _|.-----.-----.|  |_.---.-.|  |  |.-----.----.            \e[0m\n"
 printf "\033[0;37m _|   |_ |     |__ --||   _|  _  ||  |  ||  -__|   _|            \e[0m\n"
-printf "\033[0;37m|_______||__|__|_____||____|___._||__|__||_____|__|         v1.3 \e[0m\n"
+printf "\033[0;37m|_______||__|__|_____||____|___._||__|__||_____|__|         v1.5 \e[0m\n"
 echo "Auto installer mail server basic from Mailcow modified by BangDen07."
 echo ""
 printf "\033[1;33mPERHATIAN${NC} ${MERAH}!!!\e[0m\n"
@@ -146,9 +146,13 @@ sleep 0.5
 read -p "Hostname yang akan digunakan : " HOSTNAME
 sleep 1
 sudo hostnamectl set-hostname $HOSTSNAME
-sleep 2
+sleep 1
+echo $HOSTNAME > /etc/hostname
+sleep 1
 echo 127.0.0.1 $HOSTS $HOSTNAME localhost localhost.localdomain >> /etc/hosts
-sleep 0.5
+sleep 1
+echo 127.0.1.1 $HOSTS $HOSTNAME >> /etc/hosts
+sleep 1
 echo ""
 echo "Hostname berhasil diganti dan digunakan saat ini : " $HASIL_HOSTNAME
 sleep 3
@@ -229,7 +233,7 @@ printf "\033[1;33m+++++++++++++++++++++++++++++++++++++++++++++++++++++++++\e[0m
 echo ""
 echo "🎉🎉 Hore instalasi Anda sudah selesai"
 echo ""
-echo "⚠️ Tunggu ± 5 menit untuk install SSL."
+echo "⚠️ Tunggu ± 5 menit untuk install SSL. Setelah itu masuk ke halaman url."
 echo ""
 echo "Login : https://"$HOSTS
 echo "User  : admin"
